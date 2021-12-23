@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        JAR_FILE: ./build/libs/zazazan-0.0.1-SNAPSHOT.jar
+#    image:
+    ports:
+      - "8080:8080"
