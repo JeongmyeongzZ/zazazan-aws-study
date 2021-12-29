@@ -41,3 +41,11 @@ services:
       ZK_HOSTS: "zookeeper:2181"
       APPLICATION_SECRET: "random-secret"
     command: -Dpidfile.path=/dev/null
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.4.0
+    volumes:
+      - "./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro"
+      - "/var/log:/var/log"
+    depends_on:
+      - kafka
