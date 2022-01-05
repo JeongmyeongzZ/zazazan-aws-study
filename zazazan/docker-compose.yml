@@ -10,7 +10,7 @@ services:
         JAR_FILE: ./build/libs/zazazan-0.0.1-SNAPSHOT.jar
 #    image:
     ports:
-      - "8080:8080"
+      - "8088:8088"
 
   zookeeper:
     image: zookeeper

@@ -26,7 +26,10 @@ class LoggingControllerTest {
 
     @Test
     fun writeLog() {
-        mockMvc.perform(MockMvcRequestBuilders.multipart("/api/logs"))
+        mockMvc.perform(
+            MockMvcRequestBuilders.multipart("/api/logs")
+                .contentType(MediaType.APPLICATION_JSON)
+        )
             .andExpect(MockMvcResultMatchers.status().isOk)
             .andDo(MockMvcResultHandlers.print())
 
