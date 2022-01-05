@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*
 class LoggingController(private val service: LoggingService) {
 
     @PostMapping
-    fun write(): ResponseEntity.BodyBuilder {
+    fun write(): ResponseEntity<Void> {
         service.write()
 
-        return ResponseEntity.ok()
+        return ResponseEntity.ok().build()
     }
 }
