@@ -30,7 +30,7 @@ class LoggingControllerTest {
             MockMvcRequestBuilders.multipart("/api/logs")
                 .contentType(MediaType.APPLICATION_JSON)
         )
-            .andExpect(MockMvcResultMatchers.status().isOk)
+            .andExpect(MockMvcResultMatchers.status().isNoContent)
             .andDo(MockMvcResultHandlers.print())
 
         verify(loggingService, times(1)).write()

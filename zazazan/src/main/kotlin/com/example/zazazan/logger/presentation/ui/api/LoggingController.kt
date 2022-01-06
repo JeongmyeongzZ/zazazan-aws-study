@@ -1,7 +1,7 @@
 package com.example.zazazan.logger.presentation.ui.api
 
 import com.example.zazazan.logger.application.service.LoggingService
-import org.springframework.http.ResponseEntity
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.*
 class LoggingController(private val service: LoggingService) {
 
     @PostMapping
-    fun write(): ResponseEntity<Void> {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun write() {
         service.write()
-
-        return ResponseEntity.ok().build()
     }
 }
