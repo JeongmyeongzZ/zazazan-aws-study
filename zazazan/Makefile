@@ -14,3 +14,6 @@ build: ## build environment and initialize composer and project dependencies
 up: ## spin up environment
 		docker-compose up -d
 
+.PHONY: env
+env: ## spin up environment
+		cp ./src/main/resources/application.yml.example ./src/main/resources/application.yml
