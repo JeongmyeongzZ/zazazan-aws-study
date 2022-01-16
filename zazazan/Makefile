@@ -8,6 +8,7 @@ erase: ## stop and delete containers, clean volumes.
 
 .PHONY: build
 build: ## build environment and initialize composer and project dependencies
+		./gradlew build
 		docker-compose build
 
 .PHONY: up
