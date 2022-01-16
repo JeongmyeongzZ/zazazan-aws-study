@@ -11,7 +11,7 @@ import java.time.Instant
 @Service
 class LoggingServiceImpl: LoggingService {
 
-    private val logger: Logger = LoggerFactory.getLogger(this.javaClass)
+    private val logger: Logger = LoggerFactory.getLogger("filebeat")
 
     override fun write() {
         val data = HashMap<String, Any>()

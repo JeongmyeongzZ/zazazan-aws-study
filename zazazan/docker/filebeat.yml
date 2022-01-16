@@ -2,7 +2,7 @@ filebeat:
   inputs:
     - type: log
       paths:
-        - /var/log/application.log
+        - /var/log/service.log
 
 output.kafka:
   hosts: ["localhost:9092"]
